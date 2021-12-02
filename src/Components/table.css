@@ -1,0 +1,55 @@
+body{
+    background-color: rgb(218, 211, 211);
+}form{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+    font-size: 20px;
+    text-align: center;
+}
+label{
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(77, 75, 75);
+}
+.submit{
+    width: 120px;
+    height: 40px;
+    margin-top: 12px;
+}
+.submit:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px 0 0 black;
+}
+input{
+    width: 100%;
+}
+input:hover{
+    box-shadow: 2px 2px 0 0 black;
+    background-color: rgb(173, 173, 173);
+}
+fieldset:hover{
+    background-color:rgb(180, 178, 178);
+    box-shadow: 2px 2px 0 0 black;
+    color:rgb(80, 79, 79);
+}
+legend{
+    font-size: 30px;
+    text-shadow: 1px 1px white;
+    font-weight: bold;
+}
+button:hover{
+    background:rgb(224, 3, 3);
+}
+button{
+    background:rgb(218, 211, 211);
+}
+table{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+    text-align: center;
+}
+tr:hover{
+    background-color: rgb(148, 145, 145);
+}

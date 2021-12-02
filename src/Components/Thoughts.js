@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import './table.css';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import './table.css';
+
 
 export default () => {
    const [notes, setNotes] = useState([...getNotesFromLocal()]);
@@ -8,8 +9,8 @@ export default () => {
    const [date, setDate] = useState('');
 
    function getNotesFromLocal() {
-       if(!!localStorage.getItem('notes')){
-           return JSON.parse(localStorage.getItem('notes'))
+       if(!!localStorage.getItem('thoughts')){
+           return JSON.parse(localStorage.getItem('thoughts'))
        } else {
            return [];
        }
@@ -45,14 +46,14 @@ export default () => {
     }
 
    useEffect  (() => {
-       localStorage.setItem("notes", JSON.stringify(notes))},[notes]);
+       localStorage.setItem("thoughts", JSON.stringify(notes))},[notes]);
 
     return (
         <div className="Notes">
             <form id="notes" onSubmit ={(e) => handleSubmit(e, notes, setNotes, task, setTask, date, setDate)}>
                 <fieldset style={{width:'fit-content'}}>
-                    <legend>TASK</legend>
-                <label for="task" name="task">To Do: </label>
+                    <legend>MY THOUGHTS</legend>
+                <label for="task" name="task">Thought: </label>
                 <input class='task' type="text" onChange={handleTask} value={task}/><br/>
                 <label for="date" name="date">Date: </label>
                 <input class='date' type="date" onChange={handleDate} value={date}/><br/>
@@ -64,7 +65,7 @@ export default () => {
             <thead>
                 <tr>
                     <th style={{border:'1px solid black', padding: '.5rem 1rem'}}>ID</th>
-                    <th style={{border:'1px solid black', padding: '.5rem 1rem'}}>Tasks</th>
+                    <th style={{border:'1px solid black', padding: '.5rem 1rem'}}>Thoughts</th>
                     <th style={{border:'1px solid black', padding: '.5rem 1rem'}}>Date</th>
                     <th style={{border:'1px solid black', padding: '.5rem 1rem'}}></th>
                 </tr>
@@ -85,6 +86,5 @@ export default () => {
             </tbody>
         </table>
         </div>
-
     )
 }
